@@ -49,12 +49,12 @@ namespace IO.Core.Communication
             await _communicator.WriteAsync(data.GetBytes(), token).ConfigureAwait(false);
         }
 
-        public async Task<TCommunicable> ReadAsync()
+        public Task<TCommunicable> ReadAsync()
         {
-            return await Task.FromResult(Dequeue()).ConfigureAwait(false);
+            return Task.Run(Dequeue);
         }
 
-        private void Start(CancellationToken token = default)
+        public void Start(CancellationToken token = default)
         {
             var pipe = new Pipe();
 
@@ -67,7 +67,10 @@ namespace IO.Core.Communication
         private void Enqueue(TCommunicable data)
         {
             if (!(data is null))
+            {
                 _queue.Enqueue(data);
+                _receiveEvent.Set();
+            }
         }
 
         private async Task FillProcessAsync(PipeWriter writer, CancellationToken token = default)
@@ -151,8 +154,8 @@ namespace IO.Core.Communication
             return result;
         }
 
-        public abstract TCommunicable ParseMessage(ReadOnlySequence<byte> data);
+        protected abstract TCommunicable ParseMessage(ReadOnlySequence<byte> data);
 
-        public abstract SequencePosition? GetPosition(ReadOnlySequence<byte> buffer);
+        protected abstract SequencePosition? GetPosition(ReadOnlySequence<byte> buffer);
     }
 }
