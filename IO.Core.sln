@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IO.Core.Communication", "IO.Core.Communication\IO.Core.Communication.csproj", "{1FE23286-242D-40D9-8DD2-84F2310AD984}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IO.Core.Extensions", "IO.Core.Extensions\IO.Core.Extensions.csproj", "{A12625A2-C14C-4A67-B0E1-B61B68B1B067}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{1FE23286-242D-40D9-8DD2-84F2310AD984}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FE23286-242D-40D9-8DD2-84F2310AD984}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FE23286-242D-40D9-8DD2-84F2310AD984}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A12625A2-C14C-4A67-B0E1-B61B68B1B067}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A12625A2-C14C-4A67-B0E1-B61B68B1B067}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A12625A2-C14C-4A67-B0E1-B61B68B1B067}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A12625A2-C14C-4A67-B0E1-B61B68B1B067}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
